@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Styling for the navigation bar */
+        .navbar {
+            color: white;
+            background-color: #06A76E; /* Tailwind green-400 equivalent */
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* Navigation bar links */
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: #fff; /* White text color */
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Hover effect for navigation bar links */
+        .navbar a:hover {
+            background-color: #04A362; /* Slightly darker green on hover */
+        }
+
+        /* Login page container */
+        .container {
+            text-align: center;
+            margin-top: 100px;
+            padding: 20px; /* Increase the padding to create space around the input fields */
+        }
+
+        /* Style for login form */
+        .login-form {
+            border: 1px solid #06A76E; /* Green border color */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px; /* Adjust the max-width to your desired length */
+            margin: 0 auto;
+        }
+
+        /* Style for input fields on focus */
+        .login-form input:focus {
+            border: 1px solid #04A362; /* Slightly darker green on focus */
+            outline: none;
+        }
+
+        /* Style for labels */
+        .login-form label {
+            display: block;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        /* Style for input fields */
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #04A362; /* Adjust the border color */
+            border-radius: 5px;
+            margin-bottom: 10px;
+            outline: none;
+        }
+
+        /* Style for the login button */
+        .login-form .btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #04A362; /* Adjust the button styles as needed */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>TransVid</h2>
+        <div class="dual-form">
+            <a href="signup">Signup</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="login-form">
+            <h2>Login</h2>
+            <!-- Add your login form fields here -->
+            <form action="" method="POST">
+                {% csrf_token %}
+
+                {% if error_message %}
+                <div> 
+                    <h2 align="center" style="color: red;">
+                        {{ error_message }}
+                    </h2>
+                </div>
+            {% endif %}
+            
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br>
+
+                <input class="btn" type="submit" value="Login">
+                <p>dont have an acccount? <a href="signup">Signup</a></p>
+                <p>forgot password? <a href="">click here</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <style>
+        /* Styling for the navigation bar */
+        .navbar {
+            color: white;
+            background-color: #06A76E; /* Tailwind green-400 equivalent */
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        
+        /* Navigation bar links */
+        .navbar a {
+            font-size: 16px;
+            color: #fff; /* White text color */
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        /* Hover effect for navigation bar links */
+        .navbar a:hover {
+            background-color: #04A362; /* Slightly darker green on hover */
+        }
+
+        /* Blog container */
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Individual blog post */
+        .blog-post {
+            background-color: #f9f9f9; /* Light gray background */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        /* Hover effect for blog posts */
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Blog post title */
+        .blog-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Dummy text for blog post */
+        .blog-text {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>My Blog</h2>
+        <a href="#">Logout</a>
+    </div>
+        <div class="blog-container"></div>
+            {% for article in blog_articles %}
+            
+                <div class="blog-post">
+                    <div class="blog-title"></div>
+                    <div class="blog-text">
+                        
+                    </div>
+                </div>
+            {% endfor%}
+        </div>
+    </div>
+</body>
+</html>
